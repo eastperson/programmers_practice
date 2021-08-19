@@ -33,12 +33,12 @@ class CaesarCipherSolution {
             char c = (char) (ch + n);
             if('a' <= ch && ch <= 'z'){
                 if(c > 'z') c = (char) (c - 26);
-                result.append(String.valueOf(c));
+                result.append(c);
             } else if ('A' <= ch && ch <= 'Z') {
                 if(c > 'Z') c = (char) (c - 26);
-                result.append(String.valueOf(c));
+                result.append(c);
             } else if (ch == ' ') {
-                result.append(String.valueOf(" "));
+                result.append(" ");
             }
         }
         return result.toString();
@@ -50,7 +50,7 @@ class CaesarCipherSolution {
  실제로 로마의 황제 카이사르는 이 카이사르 암호를 사용하기도 했다. 카이사르 암호는 암호화하고자 하는 내용을 알파벳별로 일정한 거리만큼 밀어서 다른 알파벳으로 치환하는 방식이다.
  예를 들어 3글자씩 밀어내는 카이사르 암호로 'COME TO ROME'을 암호화하면 'FRPH WR URPH'가 된다.
  여기서 밀어내는 글자 수는 암호를 보내는 사람과 함께 정해 더 어려운 암호를 만들 수 있다.
- 이런 카이사르 암호는 순환암호라고 한다. 예를 들어 위의 카이사르 암호로 'RUSQHUVKBVEHQIIQIYDQJEH' 라는 암호를 받았을 경우, 해독하면BECAREFULFORASSASINATOR, 암살자를 조심하라는 뜻이 된다.
+ 이런 카이사르 암호는 순환암호라고 한다. 예를 들어 위의 카이사르 암호로 'RUSQHUVKBVEHQIIQIYDQJEH' 라는 암호를 받았을 경우, 해독하면 BECAREFULFORASSASINATOR, 암살자를 조심하라는 뜻이 된다.
 
  카이사르 암호는 약 기원전 100년경에 만들어져 로마의 장군인 카이사르가 동맹군들과 소통하기 위해 만든 암호이다
 
