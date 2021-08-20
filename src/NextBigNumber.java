@@ -41,12 +41,9 @@ class NextBigNumberSolution {
             String s1 = String.valueOf(s.charAt(i));
             if(s1.equals("1")) count++;
         }
-
-        n++;
-        String s1 = Integer.toBinaryString(n);
+        String s1 = Integer.toBinaryString(++n);
         while(!count(s1,count)){
-            n++;
-            s1 = Integer.toBinaryString(n);
+            s1 = Integer.toBinaryString(++n);
         }
 
         return n;
