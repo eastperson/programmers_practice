@@ -1,4 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 문제 설명
@@ -26,45 +30,28 @@ public class BigNumber {
 
 
 class BigNumberSolution {
+
     public String solution(int[] numbers) {
+
+        // 숫자를 문자열로 변환
+        String[] result = new String[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            result[i] = String.valueOf(numbers[i]);
+        }
+
+        // 정렬
+        Arrays.sort(result, (o1, o2) -> (o2 + o1).compareTo(o1 + o2));
+
+        // 0만 여러개 있는 배열의 경우 하나의 0만 리턴
+        if (result[0].equals("0")) {
+            return "0";
+        }
+
         String answer = "";
-        String[] arr = new String[numbers.length];
-        for(int i = 0; i < numbers.length; i++) {
-            arr[i] = String.valueOf(numbers[i]);
+        // 정렬된 문자 하나로 합치기
+        for (String a : result) {
+            answer += a;
         }
-        String[] sorted = new String[arr.length];
-        for(int i = 0; i < arr.length; i++){
-            for(int j = i; j < arr.length; j++) {
-                if(1==compare(arr[i],arr[j],0)){
-                    sorted[i] = arr[i];
-                    arr[i] = "0";
-                } else {
-                    sorted[j] = arr[j];
-                    arr[j] = "0";
-                }
-            }
-        }
-        String result = "";
-        for(String s : sorted){
-            result += s;
-        }
-        return result;
+        return answer;
     }
-
-    int compare(String a, String b,int idx){
-        if (idx == a.length() && a.length() == b.length()) return 0;
-        if(idx == a.length()){
-            compare(a.substring(1,a.length()),b.substring(idx),0);
-        } else if (idx == b.length()) {
-            compare(b.substring(1,a.length()),a.substring(idx),0);
-        }
-
-        if(a.charAt(idx) > b.charAt(idx)) return 1;
-
-        if (a.charAt(idx) == b.charAt(idx)) {
-            compare(a,b,idx+1);
-        }
-        return -1;
-    }
-
 }
