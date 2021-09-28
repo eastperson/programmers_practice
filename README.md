@@ -11,3 +11,8 @@
 - <a href="https://programmers.co.kr/learn/courses/30/lessons/12973">문제</a>
 - <a href="https://github.com/eastperson/programmers_practice/blob/master/src/RemovePair.java">소스코드</a>
 - <a href="https://www.notion.so/Level2-2d0fad804f7a43f5ad3a128ff23e69d3">분석</a>
+
+예상 대진표(2021.09.28)
+- <a href="https://programmers.co.kr/learn/courses/30/lessons/12985">문제</a>
+- <a href="https://github.com/eastperson/programmers_practice/blob/master/src/PredictDraw.java">소스코드</a>
+- <a href="https://www.notion.so/Level2-6bdcd6f30ec44b11b843ff008e731190">분석</a>
